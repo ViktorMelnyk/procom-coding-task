@@ -1,0 +1,48 @@
+<mat-card>
+  <h2>Create new user</h2>
+
+  <form [formGroup]="form">
+    <mat-card>
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput type="text" formControlName="firstName"></mat-form-field>
+    </mat-card>
+    <mat-card>
+      <mat-form-field>
+        <mat-label>Last name</mat-label>
+        <input matInput type="text" formControlName="lastName">
+      </mat-form-field>
+    </mat-card>
+    <mat-card>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email">
+      </mat-form-field>
+    </mat-card>
+    <mat-card>
+      <mat-form-field>
+        <mat-label>Phone number</mat-label>
+        <input matInput type="text" formControlName="phoneNumber">
+      </mat-form-field>
+    </mat-card>
+
+    <mat-card>
+      <mat-label>Addresses</mat-label>
+
+      <app-edit-address formControlName="addresses"
+                        (statusChanged)="addressStatusChanged($event)"></app-edit-address>
+    </mat-card>
+  </form>
+
+  <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
+
+  <button mat-raised-button
+          color="primary"
+          class="submit-button"
+          [disabled]="loading"
+          (click)="submit()"
+  >Add user
+  </button>
+
+</mat-card>

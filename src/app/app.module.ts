@@ -12,6 +12,9 @@ import {RouterState, StoreRouterConnectingModule} from '@ngrx/router-store';
 import {EffectsModule} from '@ngrx/effects';
 import {AppEffects} from './state/app.effects';
 import {MaterialModule} from './material.module';
+import {EditUserComponent} from './user/components/edit-user/edit-user.component';
+import {EditAddressComponent} from './user/components/edit-address/edit-address.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import {MaterialModule} from './material.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
